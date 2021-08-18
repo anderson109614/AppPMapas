@@ -1,0 +1,10 @@
+npx cap init
+npm install @capacitor/android
+npx cap add android
+npx cap open android
+
+npm i socket.io-client@2.3.0 --save
+//////
+ng build --prod
+npx cap copy
+npx cap open android

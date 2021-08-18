@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button autoHide="false" (click)="regresarBTN()">
+        <ion-icon size="large" name="arrow-back-outline"></ion-icon>
+     
+      </ion-button>
+
+    </ion-buttons>
+    <ion-title>Nuevo Cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+    <ion-card  >
+
+
+      <ion-item>
+        <ion-label>CI:</ion-label>
+        <ion-input placeholder="cedula" id="txtCedulanNew" value="{{ci}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Nombre:</ion-label>
+        <ion-input placeholder="inserte" id="txtNombreNew"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Tienda:</ion-label>
+        <ion-input placeholder="inserte" id="txtTiendaNew"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Direccion:</ion-label>
+        <ion-input placeholder="inserte" id="txtDireccionNew"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-button shape="round" color="success" expand="full"  (click)="cklGuardar()">GUARDAR</ion-button>
+
+</ion-content>

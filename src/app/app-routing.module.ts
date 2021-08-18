@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'lista-pedidos',
+    loadChildren: () => import('./componentes/lista-pedidos/lista-pedidos.module').then( m => m.ListaPedidosPageModule)
+  },
+  {
+    path: 'new-cliente',
+    loadChildren: () => import('./componentes/new-cliente/new-cliente.module').then( m => m.NewClientePageModule)
+  },
+  {
+    path: 'pedido',
+    loadChildren: () => import('./componentes/pedido/pedido.module').then( m => m.PedidoPageModule)
+  },
 ];
 
 @NgModule({

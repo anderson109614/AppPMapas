@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button autoHide="false" (click)="regresarBTN()">
+        <ion-icon size="large" name="arrow-back-outline"></ion-icon>
+     
+      </ion-button>
+
+    </ion-buttons>
+    <ion-title>pedido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card  >
+    <ion-card-header>
+      <ion-row>
+       
+        <ion-col size="10"  >
+          <ion-item>
+            <ion-label>CI:</ion-label>
+            <ion-input placeholder="cedula" id="txtCedulaBus"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col style="text-align: center;" (click)="BuscarCLiente()">
+          <ion-icon name="search-outline" size="large" style="width: 50px;" maxlenthh="10"></ion-icon>
+        </ion-col>
+        
+      </ion-row>
+     
+     
+
+   
+     
+
+    </ion-card-header>
+
+    <ion-card-content >
+      <ion-item>
+        <ion-label>
+          Nombre: {{cliente.Nombre}}
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          Tienda:{{cliente.Tienda}}
+        </ion-label>
+      </ion-item>
+      
+      <ion-item-sliding>
+        <ion-item>
+          <ion-label>
+
+            <h2 style="width: 100%;
+            white-space: nowrap;
+            overflow: hidden; white-space: initial;">Direccion: {{cliente.Direccion}}</h2>
+
+          </ion-label>
+
+        </ion-item>
+      </ion-item-sliding>
+      
+    </ion-card-content>
+  </ion-card>
+  <ion-card  >
+    <ion-card-header>
+      Productos
+     
+
+   
+     
+
+    </ion-card-header>
+
+    <ion-card-content >
+      <ion-item *ngFor="let pro of productos">
+        <ion-label>{{pro.Nombre}}</ion-label>
+        <ion-checkbox color="primary"  slot="start" class="chk"  id="{{pro.Nombre}}"></ion-checkbox>
+       
+          <ion-select value="1" id="sel-{{pro.Nombre}}">
+            <ion-select-option *ngFor="let num of numeros" value="{{num}}">{{num}}</ion-select-option>
+            
+          </ion-select>
+      </ion-item>
+     
+      
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-button shape="round" color="success" expand="full" id="btnGuardarPEdido" disabled="true" (click)="cklGuardar()">GUARDAR</ion-button>
+   
+</ion-content>
